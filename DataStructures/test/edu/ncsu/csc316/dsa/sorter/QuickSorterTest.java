@@ -5,10 +5,10 @@ import org.junit.Before;
 import org.junit.Test;
 
 /**
- * Tests the Merge Sorter with lists of integers.
+ * Tests the Quick Sorter with lists of integers.
  * @author David Mond
  */
-public class MergeSorterTest {
+public class QuickSorterTest {
 	/**
 	 * Test list 1.
 	 */
