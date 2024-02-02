@@ -104,37 +104,37 @@ public class QuickSorter<E extends Comparable<E>> extends AbstractComparisonSort
 		quickSort(data, 0, data.length - 1);
 	}
     
-    private void quickSort(E[] T, int low, int high) {
+    private void quickSort(E[] data, int low, int high) {
     	if(low < high) {
-    		int pivotLocation = partition(T, low, high);
-    		quickSort(T, low, pivotLocation - 1);
-    		quickSort(T, pivotLocation + 1, high);
+    		int pivotLocation = partition(data, low, high);
+    		quickSort(data, low, pivotLocation - 1);
+    		quickSort(data, pivotLocation + 1, high);
     	}
     }
     
-    private int partition(E[] T, int low, int high) {
+    private int partition(E[] data, int low, int high) {
     	int pivotIndex = selector.selectPivot(low, high);
-    	swap(T, pivotIndex, high);
-    	return partitionHelper(T, low, high);
+    	swap(data, pivotIndex, high);
+    	return partitionHelper(data, low, high);
     }
     
-    private int partitionHelper(E[] T, int low, int high) {
-    	E pivot = T[high];
+    private int partitionHelper(E[] data, int low, int high) {
+    	E pivot = data[high];
     	int separator = low;
     	for(int j = low; j <= high - 1; j++) {
-    		if(compare(T[j], pivot) <= 0) {
-    			swap(T, separator, j);
+    		if(compare(data[j], pivot) <= 0) {
+    			swap(data, separator, j);
     			separator++;
     		}
     	}
-    	swap(T, separator, high);
+    	swap(data, separator, high);
     	return separator;
     }
     
-    private void swap(E[] T, int low, int high) {
-    	E temp = T[low];
-    	T[low] = T[high];
-    	T[high] = temp;
+    private void swap(E[] data, int low, int high) {
+    	E temp = data[low];
+    	data[low] = data[high];
+    	data[high] = temp;
     }
 	/**
      * Defines the behaviors of a PivotSelector

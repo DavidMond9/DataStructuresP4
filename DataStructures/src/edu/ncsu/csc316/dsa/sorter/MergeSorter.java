@@ -12,7 +12,7 @@ import java.util.Comparator;
  *
  * @param <E> the type of elements to sort; elements must be {@link Comparable}
  */
-public class MergeSorter<E extends Comparable<E>> extends AbstractComparisonSorter<E>{
+public class MergeSorter<E extends Comparable<E>> extends AbstractComparisonSorter<E> {
 
     /**
      * Constructs a new MergeSorter with a specified custom Comparator
