@@ -1,6 +1,7 @@
 package edu.ncsu.csc316.dsa.sorter;
 
 import java.util.Comparator;
+import java.util.Random;
 
 /**
  * QuickSorter sorts arrays of comparable elements using the quicksort
@@ -120,7 +121,7 @@ public class QuickSorter<E extends Comparable<E>> extends AbstractComparisonSort
     private int partitionHelper(E[] T, int low, int high) {
     	E pivot = T[high];
     	int separator = low;
-    	for(int j = low; j < high - 1; j++) {
+    	for(int j = low; j <= high - 1; j++) {
     		if(compare(T[j], pivot) <= 0) {
     			swap(T, separator, j);
     			separator++;
@@ -179,8 +180,8 @@ public class QuickSorter<E extends Comparable<E>> extends AbstractComparisonSort
 
         @Override
         public int selectPivot(int low, int high) {
-        	int select = (int) (Math.random() * (high + 1));
-        	return select;
+        	Random random = new Random();
+        	return random.nextInt(high - low + 1) + low;
         }
     }
     

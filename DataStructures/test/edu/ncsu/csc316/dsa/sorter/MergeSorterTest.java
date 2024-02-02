@@ -22,7 +22,7 @@ public class MergeSorterTest {
 	 */
 	private Integer[] dataRandom = { 4, 1, 5, 3, 2 };
 	/**
-	 * Test sorter for BubbleSort.
+	 * Test sorter for MergeSort.
 	 */
 	private MergeSorter<Integer> integerSorter;
 	/**
